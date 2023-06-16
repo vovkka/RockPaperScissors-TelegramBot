@@ -40,4 +40,3 @@ async def game(message: Message):
 
     winner = get_winner(message.text, bot_choice)
     await message.answer(winner, reply_markup=start_kb)
-

@@ -13,7 +13,7 @@ class HandlerT:
     other: str
 
 
-@dataclass()
+@dataclass
 class ButtonT:
     yes: str
     no: str
@@ -23,9 +23,15 @@ class ButtonT:
 
 
 @dataclass
+class Menu:
+    commands: dict
+
+
+@dataclass
 class Lexicon:
     handler: HandlerT
     button: ButtonT
+    menu: Menu
 
 
 LEXICON = Lexicon(
@@ -45,5 +51,11 @@ LEXICON = Lexicon(
         rock="Камень 🗿",
         scissors="Ножницы ✂",
         paper="Бумага 📜"
+    ),
+    menu=Menu(
+        commands={
+            "/start": "Start bot",
+            "/help": "Rules",
+        }
     )
 )
